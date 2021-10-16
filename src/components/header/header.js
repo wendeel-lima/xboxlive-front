@@ -1,17 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./header.css";
+import "./Header.css";
 
-export default function header() {
+export default function Header() {
   return (
-    <div className="header">
-      <h1>texto</h1>
+    <header className="header">
+      <Link to="/">
+        <img
+          className="header__logo"
+          src="https://www.logotipo.pt/wp-content/uploads/2012/09/microsoft-logo-20121.jpg"
+          alt="Microsoft's Logo"
+        />
+      </Link>
       <br />
       <Link to="/">Home</Link>
       <br />
-      <Link to="/product/create">Create</Link>
+      <Link to="/game/create">Create</Link>
       <br />
-    </div>
+      <br />
+    </header>
   );
 }
