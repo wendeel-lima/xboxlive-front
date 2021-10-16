@@ -1,5 +1,9 @@
-import React from "react";
+import GameList from "../../components/GameList/GameList";
 
-export const home = () => {
-  return <div></div>;
-};
+export default function Home() {
+  return (
+    <div>
+      <GameList></GameList>
+    </div>
+  );
+}

@@ -1,13 +1,13 @@
 import React from "react";
-import { Switch } from "react-router";
-import Footer from "./components/footer/Footer";
+import "./App.css";
+import Home from "./pages/Home/Home";
+
+import Login from "./pages/Login/Login";
 
 function App() {
   return (
     <div>
-      <Header />
-      <Switch></Switch>
-      <Footer />
+      <Home />
     </div>
   );
 }
