@@ -13,12 +13,24 @@ export default function Header() {
           alt="Microsoft's Logo"
         />
       </Link>
-      <br />
-      <Link to="/">Home</Link>
-      <br />
-      <Link to="/game/create">Create</Link>
-      <br />
-      <br />
+      <ul>
+        <Link to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/">
+          <li>Games</li>
+        </Link>
+        <Link to="/user/create">
+          <li>User</li>
+        </Link>
+        <Link to="/user/create">
+          <li>Admin</li>
+        </Link>
+      </ul>
+      <ul>
+        <li>conta</li>
+        <li>login</li>
+      </ul>
     </header>
   );
 }
