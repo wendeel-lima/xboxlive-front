@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Api } from "../../api/Api";
-import GameCard from "../GameCard/GameCard";
+import GameCard from "./GameCard";
 
 const GameList = () => {
   const [game, setGame] = useState([]);
 
   useEffect(() => {
     const loadData = async () => {
-      const response = await Api.buildApiGetRequest(Api.readAllUrl());
+      const response = await Api.buildApiGetRequest(Api.readAllGameUrl());
       const results = await response.json();
 
       setGame(results);

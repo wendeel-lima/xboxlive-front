@@ -32,42 +32,21 @@ export default function Login(props) {
   return (
     <div>
       <form className="form" onSubmit={handleSubmit}>
-        <div>
-          <label className="form__label" htmlFor="email">
-            E-mail:
-          </label>
-        </div>
-
-        <div>
-          <input
-            className="form__input-text"
-            type="text"
-            id="email"
-            name="email"
+        <img
+          src="https://compass-ssl.xbox.com/assets/16/9a/169a7ffe-c2c7-463a-a77c-21239c9ac388.jpg?n=Xbox_Sharing_Xbox-2019-White-on-Green_200x200.jpg"
+          alt=""
+        />
+        <div class="card-form">
+          <img
+            class="img-form"
+            src="https://www.logotipo.pt/wp-content/uploads/2012/09/microsoft-logo-20121.jpg"
+            alt="logo"
           />
-        </div>
+          <h1>Entrar</h1>
+          <input type="text" placeholder="Nome" />
 
-        <div>
-          <label className="form__label" htmlFor="password">
-            Password:
-          </label>
-        </div>
-
-        <div>
-          <input
-            className="form__input-text"
-            type="password"
-            id="password"
-            name="password"
-          />
-        </div>
-
-        <div>
-          <input
-            className="form__submit button--primary"
-            type="submit"
-            value="Login"
-          />
+          <input type="password" placeholder="Senha" />
+          <button>Enviar</button>
         </div>
       </form>
     </div>

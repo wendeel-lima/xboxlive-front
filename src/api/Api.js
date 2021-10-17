@@ -5,17 +5,41 @@ export const Api = {
 
   loginUrl: () => Api.baseUrl + "/login",
 
-  // Endpoint - Product
+  // Endpoint - Game
 
-  readAllUrl: () => Api.baseUrl + "/game",
+  readAllGameUrl: () => Api.baseUrl + "/game",
 
-  readByIdUrl: (id) => Api.baseUrl + "/game/" + id,
+  readByIdGameUrl: (id) => Api.baseUrl + "/game/" + id,
 
   createGameUrl: () => Api.baseUrl + "/game",
 
-  updateUrl: (id) => Api.baseUrl + "/game/" + id,
+  updateGameUrl: (id) => Api.baseUrl + "/game/" + id,
 
-  deleteUrl: (id) => Api.baseUrl + "/game/" + id,
+  deleteGameUrl: (id) => Api.baseUrl + "/game/" + id,
+
+  // Endpoint - User
+
+  readAllUserUrl: () => Api.baseUrl + "/user",
+
+  readByIdUserUrl: (id) => Api.baseUrl + "/user/" + id,
+
+  createUserUrl: () => Api.baseUrl + "/user",
+
+  updateUserUrl: (id) => Api.baseUrl + "/user/" + id,
+
+  deleteUserUrl: (id) => Api.baseUrl + "/user/" + id,
+
+  // Endpoint - Genre
+
+  readAllGenreUrl: () => Api.baseUrl + "/genre",
+
+  readByIdGenreUrl: (id) => Api.baseUrl + "/genre/" + id,
+
+  createGenreUrl: () => Api.baseUrl + "/genre",
+
+  updateGenreUrl: (id) => Api.baseUrl + "/genre/" + id,
+
+  deleteGenreUrl: (id) => Api.baseUrl + "/genre/" + id,
 
   // Auth Header
 

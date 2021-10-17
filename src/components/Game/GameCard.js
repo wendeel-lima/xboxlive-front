@@ -18,9 +18,9 @@ export default function GameCard({ game }) {
         <h1>{game.name}</h1>
       </div>
       <div>{game.description}</div>
-      <div className="card__price">${game.score.toFixed(2)}</div>
-      <div className="card__link">${game.linkTreiler}</div>
-      <div className="card__link">${game.linkGameplay}</div>
+      <div className="card__price">{game.score}</div>
+      <div className="card__link">{game.linkTreiler}</div>
+      <div className="card__link">{game.linkGameplay}</div>
     </div>
   );
 }
