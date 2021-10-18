@@ -59,19 +59,29 @@
   width: 100%;
 }
 
-@media only screen and (max-width: 360px) {
-  .header {
-    flex-direction: column;
-  }
-}
-
 .content {
   grid-area: Content;
 }
 
+.imgcarrocel {
+  width: 250px;
+  height: 350px;
+  max-width: 250px;
+  max-height: 350px;
+}
+.content__destaques {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 10% 55% 35%;
+  height: calc(100vh -50px);
+}
+
+.content__destaques__principal {
+  height: 100vh;
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+
 .footer {
   grid-area: Footer;
-  background-color: transparent;
-  text-align: center;
-  font-size: 14px;
 }

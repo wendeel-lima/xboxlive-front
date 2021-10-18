@@ -33,6 +33,7 @@ export default function Login(props) {
     <div className="Content">
       <div className="Login">
         <img
+          className="img-login"
           src="https://compass-ssl.xbox.com/assets/16/9a/169a7ffe-c2c7-463a-a77c-21239c9ac388.jpg?n=Xbox_Sharing_Xbox-2019-White-on-Green_200x200.jpg"
           alt=""
         />
