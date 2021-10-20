@@ -1,125 +1,108 @@
 import React, { useEffect, useState } from "react";
-import { Api } from "../../api/Api";
+import { Api } from "../../../api/Api";
 
-export default function UpdateProduct(props) {
-    const id = props.match.params.id;
+export const UpdateGame = (props) => {
+  const id = props.match.params.id;
 
-    const [product, setProduct] = useState(undefined);
+  const [game, setGame] = useState(undefined);
 
-    useEffect(() => {
-        const loadProduct = async () => {
-            const response = await Api.buildApiGetRequest(Api.readByIdUrl(id));
+  useEffect(() => {
+    const loadGame = async () => {
+      const response = await Api.buildApiGetRequest(Api.readByIdGameUrl(id));
 
-            const results = await response.json();
+      const results = await response.json();
 
-            setProduct(results);
-        };
-
-        loadProduct();
-    }, [id]);
-
-    if (!product) {
-        return <div>Loading...</div>;
-    }
-
-    const handleSubmit = async event => {
-        // Previne o comportamento padrão do submit, que no caso do form é o refresh
-        event.preventDefault();
-
-        // Obtém os dados dos inputs
-        const name = event.target.name.value;
-        const price = +event.target.price.value;
-        const imageUrl = event.target.imageUrl.value;
-
-        // Constrói um payload com esses dados
-        const payload = {
-            name,
-            price,
-            images: [
-                {
-                    url: imageUrl,
-                },
-            ],
-        };
-
-        // Faz uma requisição no backend
-        const response = await Api.buildApiPatchRequest(
-            Api.updateUrl(id),
-            payload
-        );
-
-        const body = await response.json();
-
-        if (response.status === 200) {
-            // Product updated successfully
-
-            const id = body.id;
-
-            props.history.push(`/product/view/${id}`);
-        } else {
-            // Error
-        }
+      setGame(results);
     };
 
-    return (
-        <div>
-            <form className="form" onSubmit={handleSubmit}>
-                <div>
-                    <label className="form__label" htmlFor="name">
-                        Name:
-                    </label>
-                </div>
+    loadGame();
+  }, [id]);
 
-                <div>
-                    <input
-                        className="form__input-text"
-                        type="text"
-                        id="name"
-                        name="name"
-                        defaultValue={product.name}
-                    />
-                </div>
+  if (!game) {
+    return <div>Loading...</div>;
+  }
 
-                <div>
-                    <label className="form__label" htmlFor="price">
-                        Price:
-                    </label>
-                </div>
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-                <div>
-                    <input
-                        className="form__input-text"
-                        type="number"
-                        id="price"
-                        name="price"
-                        defaultValue={product.price}
-                    />
-                </div>
+    const name = event.target.name.value;
+    const frontCover = event.target.frontCover.value;
+    const description = event.target.description.value;
+    const year = event.target.year.value;
+    const score = +event.target.score.value;
+    const linkTreiler = event.target.linkTreiler.value;
+    const linkGameplay = event.target.linkGameplay.value;
 
-                <div>
-                    <label className="form__label" htmlFor="imageUrl">
-                        Image URL:
-                    </label>
-                </div>
-
-                <div>
-                    <input
-                        className="form__input-text"
-                        type="text"
-                        id="imageUrl"
-                        name="imageUrl"
-                        defaultValue={product.images[0]?.url}
-                    />
-                </div>
-
-                <div>
-                    <input
-                        className="form__submit button button--primary"
-                        type="submit"
-                        value="Edit"
-                    />
-                </div>
-            </form>
-        </div>
+    const payload = {
+      name,
+      frontCover,
+      description,
+      year,
+      score,
+      linkTreiler,
+      linkGameplay,
+    };
+    const response = await Api.buildApiPatchRequest(
+      Api.updateGameUrl(id),
+      payload
     );
-}
+
+    const body = response.json;
+    if (response.status === 200) {
+      const { id } = body;
+      //adicionar um modal de sucesso
+      props.history.push(`/game/view/${id}`);
+    } else {
+      //adicionar um modal de erro
+    }
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Nome</label>
+        <input type="text" id="name" name="name" defaultValue={game.name} />
+        <br />
+        <label htmlFor="frontCover">Capa:</label>
+        <input
+          type="text"
+          id="frontCover"
+          name="frontCover"
+          defaultValue={game.frontCover}
+        />
+        <br />
+        <label htmlFor="description">Descrição:</label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          defaultValue={game.description}
+        />
+        <br />
+        <label htmlFor="year">Ano:</label>
+        <input type="date" id="year" name="year" defaultValue={game.year} />
+        <br />
+        <label htmlFor="score">Score:</label>
+        <input type="text" id="score" name="score" defaultValue={game.score} />
+        <br />
+        <label htmlFor="linkTreiler">Link Trailer:</label>
+        <input
+          type="text"
+          id="linkTreiler"
+          name="linkTreiler"
+          defaultValue={game.linkTreiler}
+        />
+        <br />
+        <label htmlFor="linkGameplay">Link GamePlay:</label>
+        <input
+          type="text"
+          id="linkGameplay"
+          name="linkGameplay"
+          defaultValue={game.linkGameplay}
+        />
+        <br />
+        <input type="submit" value="enviar" />
+      </form>
+    </div>
+  );
+};

@@ -1,50 +1,45 @@
 import React, { useEffect, useState } from "react";
-import { Api } from "../../api/Api";
-import LinkButton from "../../components/LinkButton/LinkButton";
-import ProductCard from "../../components/ProductCard/ProductCard";
+import { Api } from "../../../api/Api";
+import LinkButton from "../../../components/LinkButton/LinkButton";
+import GameCard from "../../../components/Game/GameCard";
 
-import "./ViewProduct.css";
+export default function ViewGame(props) {
+  const id = props.match.params.id;
 
-export default function ViewProduct(props) {
-    const id = props.match.params.id;
+  const [game, setGame] = useState(undefined);
 
-    const [product, setProduct] = useState(undefined);
+  useEffect(() => {
+    const loadGame = async () => {
+      const response = await Api.buildApiGetRequest(Api.readByIdGameUrl(id));
 
-    useEffect(() => {
-        const loadProduct = async () => {
-            const response = await Api.buildApiGetRequest(Api.readByIdUrl(id));
+      const results = await response.json();
 
-            const results = await response.json();
+      setGame(results);
+    };
 
-            setProduct(results);
-        };
+    loadGame();
+  }, [id]);
 
-        loadProduct();
-    }, [id]);
+  if (!game) {
+    return <div>Loading...</div>;
+  }
 
-    if (!product) {
-        return <div>Loading...</div>;
-    }
+  return (
+    <div className="game">
+      <div className="game__buttons">
+        <LinkButton
+          to={"/game/update/" + id}
+          className="button button--primary"
+        >
+          Edit
+        </LinkButton>
 
-    return (
-        <div className="product">
-            <div className="product__buttons">
-                <LinkButton
-                    to={"/product/update/" + id}
-                    className="button button--primary"
-                >
-                    Edit
-                </LinkButton>
+        <LinkButton to={"/game/delete/" + id} className="button button--danger">
+          Delete
+        </LinkButton>
+      </div>
 
-                <LinkButton
-                    to={"/product/delete/" + id}
-                    className="button button--danger"
-                >
-                    Delete
-                </LinkButton>
-            </div>
-
-            <ProductCard product={product} />
-        </div>
-    );
+      <GameCard game={game} />
+    </div>
+  );
 }

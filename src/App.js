@@ -6,8 +6,11 @@ import Home from "./pages/Home/Home";
 import Footer from "./components/shared/Footer/Footer";
 import Header from "./components/shared/Header/Header";
 import { NewGame } from "./pages/Game/NewGame/NewGame";
+import { UpdateGame } from "./pages/Game/UpdateGame/UpdateGame";
+import { DeleteGame } from "./pages/Game/DeleteGame/DeleteGame";
 import Login from "./pages/Login/Login";
 import "./components/styles/card.css";
+import ViewGame from "./pages/Game/ViewGame/ViewGame";
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
           <Route path="/" exact={true} component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/game/create" component={NewGame} />
+          <Route path="/game/view/:id" component={ViewGame} />
+          <Route path="/game/update/:id" component={UpdateGame} />
+          <Route path="/game/delete/:id" component={DeleteGame} />
         </Switch>
       </div>
       <Footer />
