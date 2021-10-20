@@ -1,7 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router";
 
-export default function GameCard({ game }) {
+export default function GameCard(props) {
+  const game = props.game;
   const history = useHistory();
 
   const handleClick = () => {
@@ -17,8 +18,6 @@ export default function GameCard({ game }) {
       <div className="card__title">
         <h1>{game.name}</h1>
       </div>
-      <div>{game.description}</div>
-      <div className="card__score">{game.score}</div>
     </div>
   );
 }

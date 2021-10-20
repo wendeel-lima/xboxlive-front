@@ -26,6 +26,12 @@ export const NewGame = (props) => {
       Api.createGameUrl(),
       payload
     );
+    if (response.status === 201) {
+      //adicionar um modal de sucesso
+      props.history.push("/");
+    } else {
+      //adicionar um modal de erro
+    }
   };
 
   return (
