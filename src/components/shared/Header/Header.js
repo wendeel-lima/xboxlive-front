@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ContaUser from "./ButtonUser";
 
 export default function Header() {
   return (
@@ -11,7 +12,7 @@ export default function Header() {
           alt="Microsoft's Logo"
         />
       </Link>
-      <ul>
+      <ul className="header__ul">
         <Link to="/">
           <li>Home</li>
         </Link>
@@ -25,8 +26,10 @@ export default function Header() {
           <li>Admin</li>
         </Link>
       </ul>
-      <ul>
-        <li>conta</li>
+      <ul className="header__ul">
+        <li>
+          <ContaUser></ContaUser>
+        </li>
         <Link to="/login">
           <li>login</li>
         </Link>

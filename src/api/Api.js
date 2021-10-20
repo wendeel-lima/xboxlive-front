@@ -55,12 +55,11 @@ export const Api = {
     }),
 
   // POST
-  buildApiPostRequest: (url, body, auth) =>
+  buildApiPostRequest: (url, body) =>
     fetch(url, {
       method: "POST",
       headers: new Headers({
         "Content-type": "application/json",
-        ...(auth ? Api.authHeader() : {}),
       }),
       body: JSON.stringify(body),
     }),

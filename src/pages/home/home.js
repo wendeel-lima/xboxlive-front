@@ -1,10 +1,10 @@
 import GameList from "../../components/Game/GameList";
-import Example from "../Carroucel/Carroucel";
+import DestaqueGame from "../../components/Carroucel/Carroucel";
 
 export default function Home() {
   return (
     <div>
-      <Example />
+      <DestaqueGame />
       <GameList />
     </div>
   );

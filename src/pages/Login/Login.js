@@ -30,25 +30,25 @@ export default function Login(props) {
   };
 
   return (
-    <div className="Content">
-      <div className="Login">
+    <div className="content">
+      <div className="content__Form">
         <img
           className="img-login"
           src="https://compass-ssl.xbox.com/assets/16/9a/169a7ffe-c2c7-463a-a77c-21239c9ac388.jpg?n=Xbox_Sharing_Xbox-2019-White-on-Green_200x200.jpg"
           alt=""
         />
-        <form className="form-login" onSubmit={handleSubmit}>
-          <div class="card-form-login">
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="card-form">
             <img
-              class="img-form-login"
+              className="img-form-login"
               src="https://www.logotipo.pt/wp-content/uploads/2012/09/microsoft-logo-20121.jpg"
               alt="logo"
             />
-            <h1>Entrar</h1>
+            <h2 className="content__titulo__form">Entrar</h2>
             <input type="text" placeholder="Nome" />
 
             <input type="password" placeholder="Senha" />
-            <button>Enviar</button>
+            <button className="content__button">Enviar</button>
           </div>
         </form>
       </div>
