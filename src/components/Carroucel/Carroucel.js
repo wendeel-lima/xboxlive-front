@@ -54,7 +54,7 @@ const DestaqueGame = (props) => {
         key={item.src}
         className="imgcarrocel"
       >
-        <img src={item.src} alt={item.altText} />
+        <img className="content__card__img" src={item.src} alt={item.altText} />
         <CarouselCaption
           captionText={item.caption}
           captionHeader={item.caption}

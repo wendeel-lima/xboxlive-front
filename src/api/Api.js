@@ -1,5 +1,5 @@
 export const Api = {
-  baseUrl: "http://localhost:3000",
+  baseUrl: "https://xboxlive-backend.herokuapp.com",
 
   // Endpoint - Login
 
@@ -65,12 +65,11 @@ export const Api = {
     }),
 
   // PATCH
-  buildApiPatchRequest: (url, body, auth) =>
+  buildApiPatchRequest: (url, body) =>
     fetch(url, {
       method: "PATCH",
       headers: new Headers({
         "Content-type": "application/json",
-        ...(auth ? Api.authHeader() : {}),
       }),
       body: JSON.stringify(body),
     }),

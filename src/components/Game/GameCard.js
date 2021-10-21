@@ -10,14 +10,17 @@ export default function GameCard(props) {
   };
 
   return (
-    <div className="card" onClick={handleClick}>
-      <div className="card__images">
-        <img src={game.frontCover} alt={game.name + "'s image"} />
+    <div className="content__card" onClick={handleClick}>
+      <div className="content__card__img">
+        <img
+          className="content__card__img"
+          src={game.frontCover}
+          alt={game.name + "'s image"}
+        />
+        <h1 className="content__card__title">{game.name}</h1>
       </div>
 
-      <div className="card__title">
-        <h1>{game.name}</h1>
-      </div>
+      <div></div>
     </div>
   );
 }

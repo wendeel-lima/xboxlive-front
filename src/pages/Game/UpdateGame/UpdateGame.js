@@ -47,13 +47,9 @@ export const UpdateGame = (props) => {
       payload
     );
 
-    const body = response.json;
     if (response.status === 200) {
-      const { id } = body;
-      //adicionar um modal de sucesso
-      props.history.push(`/game/view/${id}`);
+      props.history.push("/");
     } else {
-      //adicionar um modal de erro
     }
   };
 

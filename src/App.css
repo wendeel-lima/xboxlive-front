@@ -71,11 +71,43 @@
   grid-area: Content;
 }
 
-.imgcarrocel {
-  max-width: 250px;
-  max-height: 350px;
-  width: auto;
-  height: auto;
+.content__card {
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 10px auto;
+  padding: 2rem;
+  border-radius: 10px;
+  border-top: solid black;
+  border-bottom: solid black;
+}
+
+.content__card__title {
+  font-size: 100%;
+  margin: 3px auto;
+  text-align: center;
+  background-color: lightslategrey;
+  border: ridge;
+  padding: auto;
+}
+
+.content__game {
+  display: flex;
+  margin: 30px auto;
+  align-content: center;
+  justify-content: center;
+}
+
+.content__game__img {
+  display: inline-block;
+  max-width: 350px;
+  margin-right: 10px;
+}
+.content__card__img {
+  display: block;
+  max-width: 100%;
+  max-height: 300px;
+  margin: 0 auto;
 }
 .content__destaques {
   display: grid;
@@ -114,18 +146,6 @@
 .content__titulo__form {
   text-align: center;
   font-size: 1.5rem;
-}
-.img-login {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
-}
-
-.img-form-login {
-  align-items: initial;
-  max-width: 100px;
-  max-height: 100px;
 }
 
 .card-form {
@@ -170,17 +190,4 @@
 .content__button:hover {
   background-color: #005da6;
   cursor: pointer;
-}
-
-.img-form-login {
-  display: block;
-  width: 200px;
-  height: auto;
-}
-
-.card__images {
-  display: block;
-  max-width: 100%;
-  max-height: 150px;
-  margin: 0 auto;
 }

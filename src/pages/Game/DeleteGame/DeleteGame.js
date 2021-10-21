@@ -5,7 +5,7 @@ export function DeleteGame(props) {
   const id = props.match.params.id;
 
   const handleDelete = async (event) => {
-    const response = await Api.buildApiDeleteRequest(Api.deleteUrl(id));
+    const response = await Api.buildApiDeleteRequest(Api.deleteGameUrl(id));
 
     if (response.status === 204) {
       // Delete Game successfully
