@@ -33,12 +33,38 @@ export default function ViewGame(props) {
         />
         <div>
           <h1 className="content__game__title">{game.name}</h1>
-          <h3>Descrição:</h3>
-          <p>{game.description}</p>
+          <div>
+            <h3>Descrição:</h3>
+            <p>{game.description}</p>
+          </div>
+          <div>
+            <h4>Lançamento:</h4>
+            <p>{game.year}</p>
+          </div>
 
-          <h4>
-            Lançamento:<p>{game.year}</p>
-          </h4>
+          <div className="content__iframe">
+            <ul>
+              <li>
+                <h4>Trailler</h4>
+                <iframe
+                  width="350"
+                  height="215"
+                  src={game.linkTreiler}
+                  title="YouTube video player"
+                ></iframe>
+              </li>
+              <li>
+                <h4>GamePlay</h4>
+                <iframe
+                  className="content__iframe"
+                  width="350"
+                  height="215"
+                  src={game.linkGameplay}
+                  title="YouTube video player"
+                ></iframe>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 

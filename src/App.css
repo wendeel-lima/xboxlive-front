@@ -101,6 +101,7 @@
 .content__game__img {
   display: inline-block;
   max-width: 350px;
+  max-height: auto;
   margin-right: 10px;
 }
 .content__card__img {
@@ -190,4 +191,16 @@
 .content__button:hover {
   background-color: #005da6;
   cursor: pointer;
+}
+
+.content__iframe li {
+  color: #262626;
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  font-size: 14px;
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
 }
