@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
-import Home from "../src/pages/Home/Home";
+import Home from "../src/pages/home/home";
 import Footer from "./components/shared/Footer/Footer";
 import Header from "./components/shared/Header/Header";
 import { NewGame } from "./pages/Game/NewGame/NewGame";
