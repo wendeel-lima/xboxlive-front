@@ -33,14 +33,14 @@ export default function Login(props) {
     <div className="content">
       <div className="content__Form">
         <img
-          className="img-login"
+          className="img__login--header"
           src="https://compass-ssl.xbox.com/assets/16/9a/169a7ffe-c2c7-463a-a77c-21239c9ac388.jpg?n=Xbox_Sharing_Xbox-2019-White-on-Green_200x200.jpg"
           alt=""
         />
         <form className="form" onSubmit={handleSubmit}>
           <div className="card-form">
             <img
-              className="img-form-login"
+              className="img__login--form"
               src="https://www.logotipo.pt/wp-content/uploads/2012/09/microsoft-logo-20121.jpg"
               alt="logo"
             />

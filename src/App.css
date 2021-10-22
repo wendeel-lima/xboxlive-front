@@ -104,6 +104,15 @@
   max-height: auto;
   margin-right: 10px;
 }
+
+.img__login--form {
+  width: 150px;
+}
+.img__login--header {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+}
 .content__card__img {
   display: block;
   max-width: 100%;
@@ -203,4 +212,40 @@
   margin-top: 15px;
   margin-bottom: 15px;
   text-align: center;
+}
+
+.button {
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  margin: 0.5em 0;
+  padding: 1em 1em;
+  width: 100%;
+}
+
+.button--success {
+  background-color: #099870;
+  color: white;
+}
+
+.button--success:hover {
+  background-color: #0b7456;
+}
+
+.button--primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.button--primary:hover {
+  background-color: #0768cf;
+}
+
+.button--danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.button--danger:hover {
+  background-color: #b12937;
 }

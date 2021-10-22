@@ -67,14 +67,18 @@ export default function ViewGame(props) {
           </div>
         </div>
       </div>
+      <div>
+        <LinkButton
+          to={"/game/update/" + id}
+          className="button button--primary"
+        >
+          Edit
+        </LinkButton>
 
-      <LinkButton to={"/game/update/" + id} className="button button--primary">
-        Edit
-      </LinkButton>
-
-      <LinkButton to={"/game/delete/" + id} className="button button--danger">
-        Delete
-      </LinkButton>
+        <LinkButton to={"/game/delete/" + id} className="button button--danger">
+          Delete
+        </LinkButton>
+      </div>
     </div>
   );
 }
