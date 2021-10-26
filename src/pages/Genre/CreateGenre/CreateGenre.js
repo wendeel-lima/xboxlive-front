@@ -14,7 +14,8 @@ export const CreateGenre = (props) => {
 
     const response = await Api.buildApiPostRequest(
       Api.createGenreUrl(),
-      payload
+      payload,
+      true
     );
 
     if (response.status === 201) {

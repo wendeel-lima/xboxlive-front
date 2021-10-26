@@ -48,7 +48,8 @@ export const UpdateGame = (props) => {
     };
     const response = await Api.buildApiPatchRequest(
       Api.updateGameUrl(id),
-      payload
+      payload,
+      true
     );
 
     if (response.status === 200) {

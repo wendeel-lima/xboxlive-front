@@ -36,7 +36,8 @@ export const UpdateGenre = (props) => {
     };
     const response = await Api.buildApiPatchRequest(
       Api.updateGenreUrl(id),
-      payload
+      payload,
+      true
     );
 
     if (response.status === 200) {

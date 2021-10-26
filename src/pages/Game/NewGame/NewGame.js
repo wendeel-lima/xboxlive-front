@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Select from "react-select";
 import { Api } from "../../../api/Api";
 
 export const NewGame = (props) => {
+  const [genre, setGenre] = useState([]);
+  const [genresIds, setgenresIds] = useState([]);
+
+  useEffect(() => {
+    const loadGenre = async () => {
+      const response = await Api.buildApiGetRequest(
+        Api.readAllGenreUrl(),
+        true
+      );
+
+      const results = await response.json();
+
+      setGenre(results);
+    };
+
+    loadGenre();
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -21,10 +40,12 @@ export const NewGame = (props) => {
       score,
       linkTreiler,
       linkGameplay,
+      genresIds,
     };
     const response = await Api.buildApiPostRequest(
       Api.createGameUrl(),
-      payload
+      payload,
+      true
     );
     if (response.status === 201) {
       //adicionar um modal de sucesso
@@ -32,6 +53,15 @@ export const NewGame = (props) => {
     } else {
       //adicionar um modal de erro
     }
+  };
+
+  const options = genre.map((genre) => ({
+    value: genre.id,
+    label: genre.name,
+  }));
+
+  const handleGenresChange = (selectedOption) => {
+    setgenresIds(selectedOption.map((option) => option.value));
   };
 
   return (
@@ -58,6 +88,14 @@ export const NewGame = (props) => {
         <label htmlFor="linkGameplay">Link GamePlay:</label>
         <input type="text" id="linkGameplay" name="linkGameplay" />
         <br />
+        <div>
+          <label className="form__label">Generos:</label>
+        </div>
+
+        <div>
+          <Select isMulti options={options} onChange={handleGenresChange} />
+        </div>
+
         <input type="submit" value="enviar" />
       </form>
     </div>

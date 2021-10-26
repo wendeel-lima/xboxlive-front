@@ -22,7 +22,8 @@ export const CreateUser = (props) => {
 
     const response = await Api.buildApiPostRequest(
       Api.createUserUrl(),
-      payload
+      payload,
+      true
     );
 
     if (response.status === 201) {

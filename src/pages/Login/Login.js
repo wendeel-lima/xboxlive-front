@@ -3,8 +3,6 @@ import { Api } from "../../api/Api";
 
 export default function Login(props) {
   const handleSubmit = async (event) => {
-    event.preventDefault();
-
     const email = event.target.email.value;
     const password = event.target.password.value;
 
@@ -13,7 +11,11 @@ export default function Login(props) {
       password,
     };
 
-    const response = await Api.buildApiPostRequest(Api.loginUrl(), payload);
+    const response = await Api.buildApiPostRequest(
+      Api.loginUrl(),
+      payload,
+      true
+    );
 
     const body = await response.json();
 

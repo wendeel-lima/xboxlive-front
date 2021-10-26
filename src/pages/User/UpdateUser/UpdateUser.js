@@ -44,7 +44,8 @@ export const UpdateUser = (props) => {
     };
     const response = await Api.buildApiPatchRequest(
       Api.updateUserUrl(id),
-      payload
+      payload,
+      true
     );
 
     if (response.status === 200) {
