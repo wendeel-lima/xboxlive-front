@@ -59,7 +59,12 @@ export const UpdateGenre = (props) => {
             />
             <br />
             <label htmlFor="name">Nome</label>
-            <input type="text" id="name" name="name" defaultValue={game.name} />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              defaultValue={genre.name}
+            />
             <br />
 
             <LinkButton

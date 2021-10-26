@@ -1,4 +1,5 @@
 import React from "react";
+import LinkButton from "../../../components/LinkButton/LinkButton";
 import { Api } from "../../../api/Api";
 
 export const CreateGenre = (props) => {
