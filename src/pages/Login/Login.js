@@ -1,71 +1,85 @@
 import React from "react";
 import { Api } from "../../api/Api";
+import { JwtHandler } from "../../jwt-handler/JwtHandler";
 
 export default function Login(props) {
   const handleSubmit = async (event) => {
+    // Previne o comportamento padrão do submit, que no caso do form é o refresh
+    event.preventDefault();
+
+    // Obtém os dados dos inputs
     const email = event.target.email.value;
     const password = event.target.password.value;
 
+    // Constrói um payload com esses dados
     const payload = {
       email,
       password,
     };
 
-    const response = await Api.buildApiPostRequest(
-      Api.loginUrl(),
-      payload,
-      true
-    );
+    // Faz uma requisição no backend
+    const response = await Api.buildApiPostRequest(Api.loginUrl(), payload);
 
     const body = await response.json();
 
     if (response.status === 200) {
+      // Login successfully
+
       const accessToken = body.accessToken;
 
-      localStorage.setItem("JWT", accessToken);
+      // localStorage.setItem("JWT", accessToken);
+
+      JwtHandler.setJwt(accessToken);
 
       console.log({ accessToken });
 
       props.history.push(`/`);
     } else {
+      // Error
     }
   };
 
   return (
-    <div className="content">
-      <div className="content__Form">
-        <img
-          className="img__login--header"
-          src="https://compass-ssl.xbox.com/assets/16/9a/169a7ffe-c2c7-463a-a77c-21239c9ac388.jpg?n=Xbox_Sharing_Xbox-2019-White-on-Green_200x200.jpg"
-          alt=""
-        />
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="card-form">
-            <img
-              className="img__login--form"
-              src="https://www.logotipo.pt/wp-content/uploads/2012/09/microsoft-logo-20121.jpg"
-              alt="logo"
-            />
-            <h2 className="content__titulo__form">Entrar</h2>
-            <input
-              htmlFor="email"
-              name="email"
-              id="email"
-              type="text"
-              placeholder="E-mail"
-            />
+    <div>
+      <form className="form" onSubmit={handleSubmit}>
+        <div>
+          <label className="form__label" htmlFor="email">
+            E-mail:
+          </label>
+        </div>
 
-            <input
-              htmlFor="password"
-              name="password"
-              id="password"
-              type="password"
-              placeholder="Senha"
-            />
-            <button className="content__button">Enviar</button>
-          </div>
-        </form>
-      </div>
+        <div>
+          <input
+            className="form__input-text"
+            type="text"
+            id="email"
+            name="email"
+          />
+        </div>
+
+        <div>
+          <label className="form__label" htmlFor="password">
+            Password:
+          </label>
+        </div>
+
+        <div>
+          <input
+            className="form__input-text"
+            type="password"
+            id="password"
+            name="password"
+          />
+        </div>
+
+        <div>
+          <input
+            className="form__submit button--primary"
+            type="submit"
+            value="Login"
+          />
+        </div>
+      </form>
     </div>
   );
 }
