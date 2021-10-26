@@ -35,32 +35,39 @@ export const CreateUser = (props) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Nome</label>
-        <input type="text" id="name" name="name" />
-        <br />
-        <label htmlFor="surname">Sobrenome</label>
-        <input type="text" id="surname" name="surname" />
-        <br />
-        <label htmlFor="cpf">CPF</label>
-        <input type="text" id="cpf" name="cpf" />
-        <br />
-        <label htmlFor="email">E-mail</label>
-        <input type="text" id="email" name="email" />
-        <br />
-        <label htmlFor="password">Senha</label>
-        <input type="password" id="password" name="password" />
-        <br />
+    <div className="content__Form">
+      <div className="content__game">
+        <form className="card-form" onSubmit={handleSubmit}>
+          <img
+            className="content__card__img"
+            src="https://logodownload.org/wp-content/uploads/2018/11/xbox-logo.png"
+            alt="logopng"
+          />
+          <label htmlFor="name">Nome</label>
+          <input type="text" id="name" name="name" />
+          <br />
+          <label htmlFor="surname">Sobrenome</label>
+          <input type="text" id="surname" name="surname" />
+          <br />
+          <label htmlFor="cpf">CPF</label>
+          <input type="text" id="cpf" name="cpf" />
+          <br />
+          <label htmlFor="email">E-mail</label>
+          <input type="text" id="email" name="email" />
+          <br />
+          <label htmlFor="password">Senha</label>
+          <input type="password" id="password" name="password" />
+          <br />
 
-        <LinkButton
-          type="submit"
-          value="enviar"
-          className="button button--primary"
-        >
-          Enviar
-        </LinkButton>
-      </form>
+          <LinkButton
+            type="submit"
+            value="enviar"
+            className="button button--primary"
+          >
+            Enviar
+          </LinkButton>
+        </form>
+      </div>
     </div>
   );
 };
