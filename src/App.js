@@ -20,7 +20,10 @@ function App() {
       <div className="content">
         <Switch>
           <Route path="/" exact={true} component={Home} />
+
           <Route path="/login" component={Login} />
+
+          {/* CRUD GAMES */}
           <Route path="/game/create" component={NewGame} />
           <Route path="/game/view/:id" component={ViewGame} />
           <Route path="/game/update/:id" component={UpdateGame} />

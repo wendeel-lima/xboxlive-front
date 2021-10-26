@@ -91,13 +91,14 @@
   padding: auto;
 }
 
+.game__card,
 .content__game {
   display: flex;
   margin: 30px auto;
   align-content: center;
   justify-content: center;
 }
-
+.game__img,
 .content__game__img {
   display: inline-block;
   max-width: 350px;
@@ -113,6 +114,7 @@
   margin: 0 auto;
   width: 150px;
 }
+
 .content__card__img {
   display: block;
   max-width: 100%;
@@ -173,6 +175,7 @@
   min-height: 338px;
   overflow: hidden;
 }
+
 .card-form input {
   display: block;
   width: 100%;
