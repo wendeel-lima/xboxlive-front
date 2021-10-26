@@ -1,3 +1,5 @@
+import { JwtHandler } from "../jwt-handler/JwtHandler";
+
 export const Api = {
   baseUrl: "https://xboxlive-backend.herokuapp.com",
 
@@ -44,7 +46,7 @@ export const Api = {
   // Auth Header
 
   authHeader: () => ({
-    Authorization: "Bearer " + localStorage.getItem("JWT"),
+    Authorization: "Bearer " + JwtHandler.getJwt(),
   }),
 
   // GET
@@ -60,7 +62,7 @@ export const Api = {
       method: "POST",
       headers: new Headers({
         "Content-type": "application/json",
-        ...true(auth ? Api.authHeader() : {}),
+        ...(auth ? Api.authHeader() : {}),
       }),
       body: JSON.stringify(body),
     }),
@@ -71,7 +73,7 @@ export const Api = {
       method: "PATCH",
       headers: new Headers({
         "Content-type": "application/json",
-        ...true(auth ? Api.authHeader() : {}),
+        ...(auth ? Api.authHeader() : {}),
       }),
       body: JSON.stringify(body),
     }),
