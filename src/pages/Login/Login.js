@@ -45,9 +45,21 @@ export default function Login(props) {
               alt="logo"
             />
             <h2 className="content__titulo__form">Entrar</h2>
-            <input type="text" placeholder="Nome" />
+            <input
+              htmlFor="email"
+              name="email"
+              id="email"
+              type="text"
+              placeholder="E-mail"
+            />
 
-            <input type="password" placeholder="Senha" />
+            <input
+              htmlFor="password"
+              name="password"
+              id="password"
+              type="password"
+              placeholder="Senha"
+            />
             <button className="content__button">Enviar</button>
           </div>
         </form>
