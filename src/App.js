@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import Login from "./pages/Login/Login";
+import Logout from "./pages/Logout/Logout";
+
 import GuardedRoute from "./components/GuardedRoute/GuardedRoute";
 import "./components/styles/card.css";
 
@@ -35,6 +37,7 @@ function App() {
           <Route path="/" exact={true} component={Home} />
 
           <Route path="/login" component={Login} />
+          <GuardedRoute path="/logout" component={Logout} />
 
           {/* CRUD GAMES */}
           <GuardedRoute path="/game/create" component={NewGame} />

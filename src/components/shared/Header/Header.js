@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ContaUser from "./ButtonUser";
 
 export default function Header() {
   return (
@@ -19,19 +18,13 @@ export default function Header() {
         <Link to="/">
           <li>Games</li>
         </Link>
-        <Link to="/user/create">
-          <li>User</li>
-        </Link>
-        <Link to="/user/create">
-          <li>Admin</li>
-        </Link>
       </ul>
       <ul className="header__ul">
-        <li>
-          <ContaUser></ContaUser>
-        </li>
         <Link to="/login">
           <li>login</li>
+        </Link>
+        <Link to="/login">
+          <li>log Out</li>
         </Link>
       </ul>
     </header>

@@ -1,5 +1,7 @@
 import React from "react";
 import { Api } from "../../api/Api";
+import { Link } from "react-router-dom";
+import LinkButton from "../../components/LinkButton/LinkButton";
 import { JwtHandler } from "../../jwt-handler/JwtHandler";
 
 export default function Login(props) {
@@ -40,46 +42,49 @@ export default function Login(props) {
   };
 
   return (
-    <div>
-      <form className="form" onSubmit={handleSubmit}>
-        <div>
-          <label className="form__label" htmlFor="email">
-            E-mail:
-          </label>
-        </div>
-
-        <div>
-          <input
-            className="form__input-text"
-            type="text"
-            id="email"
-            name="email"
+    <div className="content__Form">
+      <div className="content__game">
+        <form className="card-form" onSubmit={handleSubmit}>
+          <img
+            className="content__card__img"
+            src="https://logodownload.org/wp-content/uploads/2018/11/xbox-logo.png"
+            alt="logopng"
           />
-        </div>
+          <div>
+            <label className="form__label" htmlFor="email">
+              E-mail:
+            </label>
+          </div>
 
-        <div>
-          <label className="form__label" htmlFor="password">
-            Password:
-          </label>
-        </div>
+          <div>
+            <input
+              className="form__input-text"
+              type="text"
+              id="email"
+              name="email"
+            />
+          </div>
 
-        <div>
-          <input
-            className="form__input-text"
-            type="password"
-            id="password"
-            name="password"
-          />
-        </div>
+          <div>
+            <label className="form__label" htmlFor="password">
+              Password:
+            </label>
+          </div>
 
-        <div>
-          <input
-            className="form__submit button--primary"
-            type="submit"
-            value="Login"
-          />
-        </div>
-      </form>
+          <div className="form__input-text">
+            <input type="password" id="password" name="password" />
+          </div>
+          <div>
+            <Link to="/user/create">Criar Conta</Link>
+          </div>
+
+          <div>
+            <LinkButton type="submit" className="button button--primary">
+              Login
+            </LinkButton>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
