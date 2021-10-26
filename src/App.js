@@ -19,6 +19,11 @@ import { CreateGenre } from "./pages/Genre/CreateGenre/CreateGenre";
 import { UpdateGenre } from "./pages/Genre/UpdateGenre/UpdateGenre";
 import { DeleteGenre } from "./pages/Genre/DeleteGenre/DeleteGenre";
 
+import { CreateUser } from "./pages/User/CreateUser/CreateUser";
+import { DeleteUser } from "./pages/User/DeleteUser/DeleteUser";
+import { UpdateUser } from "./pages/User/UpdateUser/UpdateUser";
+import ViewUser from "./pages/User/ViewUser/ViewUser";
+
 function App() {
   return (
     <div className="app">
@@ -41,6 +46,12 @@ function App() {
           <Route path="/genre/view/:id" component={ViewGenre} />
           <Route path="/genre/update/:id" component={UpdateGenre} />
           <Route path="/genre/delete/:id" component={DeleteGenre} />
+
+          {/* CRUD USER */}
+          <Route path="/user/create" component={CreateUser} />
+          <Route path="/user/view/:id" component={ViewUser} />
+          <Route path="/user/update/:id" component={UpdateUser} />
+          <Route path="/user/delete/:id" component={DeleteUser} />
         </Switch>
       </div>
       <Footer />
