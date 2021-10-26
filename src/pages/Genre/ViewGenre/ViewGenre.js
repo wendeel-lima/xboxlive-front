@@ -9,7 +9,10 @@ export default function ViewGenre(props) {
 
   useEffect(() => {
     const loadGenre = async () => {
-      const response = await Api.buildApiGetRequest(Api.readByIdGenreUrl(id));
+      const response = await Api.buildApiGetRequest(
+        Api.readByIdGenreUrl(id),
+        true
+      );
 
       const results = await response.json();
 

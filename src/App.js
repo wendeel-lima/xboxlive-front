@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import Login from "./pages/Login/Login";
+import GuardedRoute from "./components/GuardedRoute/GuardedRoute";
 import "./components/styles/card.css";
 
 import Home from "../src/pages/home/home";
@@ -36,22 +37,22 @@ function App() {
           <Route path="/login" component={Login} />
 
           {/* CRUD GAMES */}
-          <Route path="/game/create" component={NewGame} />
+          <GuardedRoute path="/game/create" component={NewGame} />
           <Route path="/game/view/:id" component={ViewGame} />
-          <Route path="/game/update/:id" component={UpdateGame} />
-          <Route path="/game/delete/:id" component={DeleteGame} />
+          <GuardedRoute path="/game/update/:id" component={UpdateGame} />
+          <GuardedRoute path="/game/delete/:id" component={DeleteGame} />
 
           {/* CRUD GENRE */}
-          <Route path="/genre/create" component={CreateGenre} />
+          <GuardedRoute path="/genre/create" component={CreateGenre} />
           <Route path="/genre/view/:id" component={ViewGenre} />
-          <Route path="/genre/update/:id" component={UpdateGenre} />
-          <Route path="/genre/delete/:id" component={DeleteGenre} />
+          <GuardedRoute path="/genre/update/:id" component={UpdateGenre} />
+          <GuardedRoute path="/genre/delete/:id" component={DeleteGenre} />
 
           {/* CRUD USER */}
           <Route path="/user/create" component={CreateUser} />
-          <Route path="/user/view/:id" component={ViewUser} />
-          <Route path="/user/update/:id" component={UpdateUser} />
-          <Route path="/user/delete/:id" component={DeleteUser} />
+          <GuardedRoute path="/user/view/:id" component={ViewUser} />
+          <GuardedRoute path="/user/update/:id" component={UpdateUser} />
+          <GuardedRoute path="/user/delete/:id" component={DeleteUser} />
         </Switch>
       </div>
       <Footer />

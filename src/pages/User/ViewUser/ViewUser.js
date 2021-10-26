@@ -9,7 +9,10 @@ export default function ViewUser(props) {
 
   useEffect(() => {
     const loadUser = async () => {
-      const response = await Api.buildApiGetRequest(Api.readByIdUserUrl(id));
+      const response = await Api.buildApiGetRequest(
+        Api.readByIdUserUrl(id),
+        true
+      );
 
       const results = await response.json();
 
